@@ -9,7 +9,6 @@ import { CMS_NAME } from "../../constants/constants";
 import markdownToHtml from "../../utilities/markdownToHtml";
 import Author from "../../components/Author";
 import Date from "../../components/Date";
-import Image from "next/image";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
@@ -36,7 +35,7 @@ export default function Post({ post, morePosts, preview }) {
 
             <Author name={post.author.name} picture={post.author.picture} />
 
-            <Image
+            <img
               src={post.postImage}
               alt={`Cover Image for ${post.title}`}
               layout="responsive"
