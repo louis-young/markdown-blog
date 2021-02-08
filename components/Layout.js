@@ -5,9 +5,8 @@ import Header from "./Header";
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
       <Meta />
-      <main>{children}</main>
+      <main className="container mx-auto px-5">{children}</main>
       <Footer />
     </>
   );
