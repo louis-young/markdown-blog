@@ -31,7 +31,7 @@ const FeaturedPost = ({ title, postImage, date, excerpt, author, slug }) => {
         </div>
         <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <Author name={author.name} picture={author.picture} />
+          <Author name={author.name} picture={author.picture} link={author.link} />
         </div>
       </div>
     </section>

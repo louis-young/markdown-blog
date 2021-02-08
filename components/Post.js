@@ -30,7 +30,7 @@ const Post = ({ title, postImage, date, excerpt, author, slug }) => {
 
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
 
-      <Author name={author.name} picture={author.picture} />
+      <Author name={author.name} picture={author.picture} link={author.link} />
     </article>
   );
 };

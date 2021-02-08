@@ -6,6 +6,7 @@ date: "2021-02-08T05:35:07.322Z"
 author:
   name: Louis Young
   picture: "/assets/blog/authors/louis.jpg"
+  link: "https://www.louisyoung.co.uk"
 ogImage:
   url: "/assets/blog/why-functional-state-updates-are-important-react/introduction.jpg"
 ---

@@ -43,7 +43,7 @@ const Index = ({ posts }) => {
           />
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
+        <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
           {remainingPosts &&
             remainingPosts.map((post) => (
               <Post
@@ -56,7 +56,7 @@ const Index = ({ posts }) => {
                 excerpt={post.excerpt}
               />
             ))}
-        </div>
+        </section>
       </Layout>
     </>
   );

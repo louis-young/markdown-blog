@@ -6,6 +6,7 @@ date: "2021-02-06T05:35:07.322Z"
 author:
   name: Louis Young
   picture: "/assets/blog/authors/louis.jpg"
+  link: "https://www.louisyoung.co.uk"
 ogImage:
   url: "/assets/blog/how-to-recognise-and-stop-deriving-state-react/introduction.jpg"
 ---

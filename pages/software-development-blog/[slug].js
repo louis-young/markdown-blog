@@ -17,43 +17,49 @@ const Post = ({ post, preview }) => {
     return <ErrorPage statusCode={404} />;
   }
 
+  if (router.isFallback) {
+    return (
+      <h1 className="text-6xl md:text-7xl xl:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-left">
+        Loading...
+      </h1>
+    );
+  }
+
   return (
     <Layout preview={preview}>
-      {router.isFallback ? (
-        <h1>Loading…</h1>
-      ) : (
-        <>
-          <Progress />
-          <Header />
-          <article className="mb-24 md:mb-32">
-            <Head>
-              <title>{post.title} | Louis Young</title>
-              <meta property="og:image" content={post.ogImage.url} />
-            </Head>
+      <>
+        <Head>
+          <title>{post.title} | Louis Young</title>
+          <meta property="og:image" content={post.ogImage.url} />
+        </Head>
 
-            <h1 className="text-6xl md:text-7xl xl:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-left">
-              {post.title}
-            </h1>
+        <Progress />
 
-            <div className="hidden md:block md:mb-12">
-              <Author name={post.author.name} picture={post.author.picture} />
-            </div>
+        <Header />
 
-            <img
-              src={post.postImage}
-              alt={`Cover Image for ${post.title}`}
-              layout="responsive"
-              className="mb-8 md:mb-16 sm:mx-0 w-full h-full max-h-35 object-cover"
-            />
+        <article className="mb-24 md:mb-32">
+          <h1 className="text-6xl md:text-7xl xl:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-left">
+            {post.title}
+          </h1>
 
-            <div className="max-w-2xl mx-auto mb-6 text-lg">
-              <Date dateString={post.date} />
-            </div>
+          <div className="hidden md:block md:mb-12">
+            <Author name={post.author.name} picture={post.author.picture} link={post.author.link} />
+          </div>
 
-            <Content content={post.content} />
-          </article>
-        </>
-      )}
+          <img
+            src={post.postImage}
+            alt={`Cover Image for ${post.title}`}
+            layout="responsive"
+            className="mb-8 md:mb-16 sm:mx-0 w-full h-full max-h-35 object-cover"
+          />
+
+          <div className="max-w-2xl mx-auto mb-6 text-lg">
+            <Date dateString={post.date} />
+          </div>
+
+          <Content content={post.content} />
+        </article>
+      </>
     </Layout>
   );
 };

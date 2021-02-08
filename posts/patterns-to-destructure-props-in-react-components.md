@@ -6,6 +6,7 @@ date: "2021-02-07T05:35:07.322Z"
 author:
   name: Louis Young
   picture: "/assets/blog/authors/louis.jpg"
+  link: "https://www.louisyoung.co.uk"
 ogImage:
   url: "/assets/blog/patterns-to-destructure-props-in-react-components/introduction.jpg"
 ---
