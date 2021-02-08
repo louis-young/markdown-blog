@@ -22,7 +22,7 @@ const FeaturedPost = ({ title, postImage, date, excerpt, author, slug }) => {
         <div>
           <h3 className="mb-4 text-3xl md:text-4xl lg:text-6xl leading-tight">
             <Link as={`/software-development-blog/${slug}`} href="/software-development-blog/[slug]">
-              <a className="hover:underline">{title}</a>
+              <a className="hover:underline leading-tight">{title}</a>
             </Link>
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
