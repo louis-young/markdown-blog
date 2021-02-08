@@ -1,17 +1,15 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Content from "../../components/Content/Content";
-
+import Content from "../../components/Content";
 import Layout from "../../components/Layout";
 import { getPostBySlug, getAllPosts } from "../../api/api";
 import Head from "next/head";
-import { BLOG_NAME } from "../../constants/constants";
 import markdownToHtml from "../../utilities/markdownToHtml";
 import Author from "../../components/Author";
 import Date from "../../components/Date";
 import Header from "../../components/Header";
 
-export default function Post({ post, morePosts, preview }) {
+const Post = ({ post, preview }) => {
   const router = useRouter();
 
   if (!router.isFallback && !post?.slug) {
@@ -25,15 +23,13 @@ export default function Post({ post, morePosts, preview }) {
       ) : (
         <>
           <Header />
-          <article className="mb-32">
+          <article className="mb-24 md:mb-32">
             <Head>
-              <title>
-                {post.title} - Software Development Blog | {BLOG_NAME}
-              </title>
+              <title>{post.title} | Louis Young</title>
               <meta property="og:image" content={post.ogImage.url} />
             </Head>
 
-            <h1 className="text-6xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
+            <h1 className="text-6xl md:text-7xl xl:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-left">
               {post.title}
             </h1>
 
@@ -58,9 +54,9 @@ export default function Post({ post, morePosts, preview }) {
       )}
     </Layout>
   );
-}
+};
 
-const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const post = getPostBySlug(params.slug, ["title", "date", "slug", "author", "content", "ogImage", "postImage"]);
 
   const content = await markdownToHtml(post.content || "");
@@ -75,7 +71,7 @@ const getStaticProps = async ({ params }) => {
   };
 };
 
-const getStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const posts = getAllPosts(["slug"]);
 
   return {
@@ -90,4 +86,4 @@ const getStaticPaths = async () => {
   };
 };
 
-export { getStaticProps, getStaticPaths };
+export default Post;

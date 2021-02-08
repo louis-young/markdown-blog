@@ -1,21 +1,24 @@
 import Head from "next/head";
-import { BLOG_NAME, OG_IMAGE_URL } from "../constants/constants";
+import { OG_IMAGE_URL } from "../constants/constants";
 
 const Meta = () => {
   return (
     <Head>
-      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-      <link rel="manifest" href="/favicon/site.webmanifest" />
-      <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000" />
-      <link rel="shortcut icon" href="/favicon/favicon.ico" />
-      <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#000" />
-      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="description" content={`A statically generated blog example using Next.js and ${BLOG_NAME}.`} />
+      <meta name="description" content="A software development blog by Louis Young." />
+      <link rel="canonical" href="https://blog.louisyoung.co.uk" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Software Development Blog - Web Development | Louis Young" />
+      <meta property="og:title" content="Louis Young - Web Developer" />
+      <meta property="og:url" content="https://blog.louisyoung.co.uk" />
+      <meta property="og:description" content="A software development blog by Louis Young." />
       <meta property="og:image" content={OG_IMAGE_URL} />
+      <meta name="twitter:site" content="https://blog.louisyoung.co.uk" />
+      <meta name="twitter:title" content="Louis Young - Web Developer" />
+      <meta name="twitter:url" content="https://blog.louisyoung.co.uk" />
+      <meta name="twitter:description" content="A software development blog by Louis Young." />
+      <meta name="twitter:image" content={OG_IMAGE_URL} />
+
+      <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
     </Head>
   );
 };

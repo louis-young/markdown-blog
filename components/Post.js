@@ -6,7 +6,7 @@ const Post = ({ title, postImage, date, excerpt, author, slug }) => {
   return (
     <article>
       <div className="sm:mx-0 mb-5">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
+        <Link as={`/software-development-blog/${slug}`} href="/software-development-blog/[slug]">
           <a>
             <img
               src={postImage}
@@ -19,7 +19,7 @@ const Post = ({ title, postImage, date, excerpt, author, slug }) => {
       </div>
 
       <h3 className="text-3xl mb-3 leading-snug hover:underline">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
+        <Link as={`/software-development-blog/${slug}`} href="/software-development-blog/[slug]">
           <a>{title}</a>
         </Link>
       </h3>

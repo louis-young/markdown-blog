@@ -1,37 +1,35 @@
 import Layout from "../components/Layout";
 import { getAllPosts } from "../api/api";
 import Head from "next/head";
-import { BLOG_NAME } from "../constants/constants";
-
 import Post from "../components/Post";
-import FeaturedPost from "../components/FeaturedPost/FeaturedPost";
+import FeaturedPost from "../components/FeaturedPost";
 
-export default function Index({ allPosts }) {
-  const featuredPost = allPosts[0];
+const Index = ({ posts }) => {
+  const featuredPost = posts[0];
 
-  const remainingPosts = allPosts.slice(1);
+  const remainingPosts = posts.slice(1);
 
   return (
     <>
       <Layout>
         <Head>
-          <title>{BLOG_NAME}</title>
+          <title>Software Development Blog - Web Development | Louis Young</title>
         </Head>
 
         <section className="flex-col md:flex-row flex items-start md:items-center md:justify-between mt-8 mb-16 md:mb-12">
-          <h1 className="text-6xl lg:text-7xl font-bold tracking-tighter leading-tight md:pr-8">Louis Young.</h1>
-          <h4 className="text-left text-lg mt-5 md:pl-8">
+          <h2 className="text-6xl lg:text-7xl font-bold tracking-tighter leading-tight md:pr-8">Louis Young.</h2>
+          <h1 className="text-left text-lg mt-5 md:pl-8">
             A software development blog by{" "}
             <a
               href="https://www.louisyoung.co.uk/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-primary duration-200 transition-colors"
+              className="underline hover:text-primary"
             >
               Louis Young
             </a>
             .
-          </h4>
+          </h1>
         </section>
 
         {featuredPost && (
@@ -62,12 +60,14 @@ export default function Index({ allPosts }) {
       </Layout>
     </>
   );
-}
+};
 
-export async function getStaticProps() {
-  const allPosts = getAllPosts(["title", "date", "slug", "author", "postImage", "excerpt"]);
+export const getStaticProps = async () => {
+  const posts = getAllPosts(["title", "date", "slug", "author", "postImage", "excerpt"]);
 
   return {
-    props: { allPosts },
+    props: { posts },
   };
-}
+};
+
+export default Index;
