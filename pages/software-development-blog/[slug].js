@@ -8,6 +8,7 @@ import markdownToHtml from "../../utilities/markdownToHtml";
 import Author from "../../components/Author";
 import Date from "../../components/Date";
 import Header from "../../components/Header";
+import Progress from "../../components/Progress";
 
 const Post = ({ post, preview }) => {
   const router = useRouter();
@@ -22,6 +23,7 @@ const Post = ({ post, preview }) => {
         <h1>Loading…</h1>
       ) : (
         <>
+          <Progress />
           <Header />
           <article className="mb-24 md:mb-32">
             <Head>
