@@ -3,3 +3,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+::selection {
+  background: #b4d5ff;
+}

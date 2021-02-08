@@ -17,7 +17,6 @@ const Meta = () => {
       <meta name="twitter:url" content="https://blog.louisyoung.co.uk" />
       <meta name="twitter:description" content="A software development blog by Louis Young." />
       <meta name="twitter:image" content={OG_IMAGE_URL} />
-
       <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
     </Head>
   );

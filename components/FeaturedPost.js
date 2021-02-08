@@ -5,8 +5,8 @@ import Author from "./Author";
 
 const FeaturedPost = ({ title, postImage, date, excerpt, author, slug }) => {
   return (
-    <section>
-      <div className="md:mb-12">
+    <article>
+      <figure className="md:mb-12">
         <Link as={`/software-development-blog/${slug}`} href="/software-development-blog/[slug]">
           <a>
             <img
@@ -17,8 +17,8 @@ const FeaturedPost = ({ title, postImage, date, excerpt, author, slug }) => {
             />
           </a>
         </Link>
-      </div>
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-24">
+      </figure>
+      <figcaption className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-24">
         <div>
           <h3 className="mb-4 text-3xl md:text-4xl lg:text-6xl leading-tight">
             <Link as={`/software-development-blog/${slug}`} href="/software-development-blog/[slug]">
@@ -33,8 +33,8 @@ const FeaturedPost = ({ title, postImage, date, excerpt, author, slug }) => {
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
           <Author name={author.name} picture={author.picture} link={author.link} />
         </div>
-      </div>
-    </section>
+      </figcaption>
+    </article>
   );
 };
 

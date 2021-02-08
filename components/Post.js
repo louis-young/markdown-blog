@@ -5,7 +5,7 @@ import Link from "next/link";
 const Post = ({ title, postImage, date, excerpt, author, slug }) => {
   return (
     <article>
-      <div className="sm:mx-0 mb-5">
+      <figure className="sm:mx-0 mb-5">
         <Link as={`/software-development-blog/${slug}`} href="/software-development-blog/[slug]">
           <a>
             <img
@@ -16,7 +16,7 @@ const Post = ({ title, postImage, date, excerpt, author, slug }) => {
             />
           </a>
         </Link>
-      </div>
+      </figure>
 
       <h3 className="text-3xl mb-3 leading-snug hover:underline">
         <Link as={`/software-development-blog/${slug}`} href="/software-development-blog/[slug]">
