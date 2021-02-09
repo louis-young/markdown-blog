@@ -1,6 +1,6 @@
 ---
 title: "Patterns to destructure props in React components"
-excerpt: "Explore patterns to destructure props in React components. There are many approaches and this subject can be quite subjective, so make your own judgements as to what works for you and your team."
+excerpt: "Today, we will explore various patterns used to destructure props in React components. Props (short for properties) are immutable properties that are passed down through React components from parent to child."
 image: "/assets/blog/patterns-to-destructure-props-in-react-components/introduction.jpg"
 date: "2021-02-09T05:35:07.322Z"
 author:
@@ -11,7 +11,9 @@ ogImage:
   url: "/assets/blog/patterns-to-destructure-props-in-react-components/introduction.jpg"
 ---
 
-Explore patterns to destructure props in React components. There are many approaches and this subject can be quite subjective, so make your own judgements as to what works for you and your team.
+Today, we will explore various patterns used to destructure props in React components. Props (short for properties) are immutable properties that are passed down through React components from parent to child. They are key to React and it's unidirectional data flow.
+
+There are many approaches to this and this subject can be quite subjective, so make your own judgements as to what works for you and your team.
 
 ## Approaches
 
@@ -89,7 +91,7 @@ This pattern can definitely be useful, but weigh up the pros and cons of each ap
 
 ### Directly accessing props
 
-One of the most common ways to access props in React is to directly access them through the `props` object. Personally, I don't use this approach as for most applications I prefer the first example.
+If you don't like any of the above, then consider not destructuring. One of the most common ways to access props in React is to access them directly.
 
 Here's an example of accessing props directly:
 
@@ -99,13 +101,11 @@ const Component = (props) => {
 };
 ```
 
-You could consider this as a happy medium between the two aforementioned patterns, but this is your decision to make.
+At first glance, it isn't immediately obvious what props are passed down to this component.
 
-At first glance, it isn't immediately obvious what props this component can/should accept. This can be solved with TypeScript, but let's leave that for another article.
+Some would consider this approach too verbose as you have to repeat `props.` every time you want to access a prop. This is highly contrived and you can make your own decision, but personally it's a no-issue for me.
 
-Some would consider this approach too verbose as you have to repeat `props.` every time you want to access a prop. This is highly contrived and you'll have your own views on this, but personally I don't think it's a real issue.
-
-On the contrary, accessing via `props.` clearly indicates where the title in the above example originated from.
+Following on from the above, accessing properties via `props.` clearly indicates where the title in the above example originated from.
 
 ### Conclusion
 
