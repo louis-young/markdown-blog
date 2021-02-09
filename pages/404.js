@@ -6,9 +6,8 @@ const _error = () => {
     <Layout>
       <section>
         <h1 className="py-20 text-center text-2xl md:text-4xl font-bold tracking-tight leading-normal md:leading-normal">
-          Oops, something went wrong.
-          <br />
-          Please try again shortly.
+          Oops, we couldn't find what you
+          <br /> were looking for.
         </h1>
       </section>
     </Layout>
