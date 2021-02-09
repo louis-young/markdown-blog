@@ -65,7 +65,7 @@ const Post = ({ post, preview }) => {
             <img
               src={post.image}
               alt={`Cover Image for ${post.title}`}
-              className="mb-8 md:mb-16 sm:mx-0 w-full h-full max-h-35 object-cover"
+              className="mb-8 md:mb-16 sm:mx-0 w-full h-full max-h-35 object-cover rounded"
             />
 
             <div className="max-w-2xl mx-auto mb-6 text-lg">

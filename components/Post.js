@@ -10,7 +10,7 @@ const Post = ({ title, image, excerpt, author, slug }) => {
           <a>
             <img
               src={image}
-              className="w-full h-52 object-cover shadow-sm hover:shadow-md hover:opacity-80 transition duration-200"
+              className="w-full h-52 object-cover rounded shadow-sm hover:shadow-md hover:opacity-80 transition duration-200"
               alt={`Cover Image for ${title}`}
               loading="lazy"
             />
