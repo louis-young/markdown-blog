@@ -7,3 +7,7 @@
 ::selection {
   background: #b4d5ff;
 }
+
+pre {
+  @apply rounded;
+}
