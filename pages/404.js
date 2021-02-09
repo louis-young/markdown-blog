@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 
-const _error = () => {
+const NotFound = () => {
   return (
     <Layout>
       <section>
@@ -14,4 +14,4 @@ const _error = () => {
   );
 };
 
-export default _error;
+export default NotFound;
