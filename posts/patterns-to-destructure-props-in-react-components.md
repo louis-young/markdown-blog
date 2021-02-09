@@ -13,9 +13,9 @@ ogImage:
 
 Today, we will explore various patterns used to destructure props in React components. Props (short for properties) are immutable properties that are passed down through React components from parent to child. They are key to React and it's unidirectional data flow.
 
-This article assumes that you're using functional components. If you aren't, a lot of what we're about to talk about isn't applicable due to how props are inherited in class components.
+This article assumes that you're using functional components. If you aren't, a lot of what we're about to talk about isn't applicable due to how props are inherited by class components.
 
-There are many approaches to this and this subject can be quite subjective, so make your own judgements as to what works for you and your team.
+There are many approaches and this topic can be quite subjective, so make your own judgements as to what works for you and your team.
 
 ## Approaches
 
@@ -57,6 +57,12 @@ const Component = ({ title }) => {
 That is a very small example, but image this scaled up. If your component file is sizeable, you might not always be able to see it's props when writing code within it. It isn't always clear at first glance where `title` originated from.
 
 Now, this isn't something I have personally found to be a challenge and you can make your own judgement, but it is something to be aware of with this approach.
+
+A common mistake when destructuring using this approach is to miss the object notation in the parenthesis. Here's an example of what _not_ to do.
+
+```js
+const Component = (title) => ... // Note that we are missing the {} here.
+```
 
 <a name="destructuring-in-the-component-body"></a>
 
@@ -108,6 +114,12 @@ At first glance, it isn't immediately obvious what props are passed down to this
 Some would consider this approach too verbose as you have to repeat `props.` every time you want to access a prop. This is highly contrived and you can make your own decision, but personally it's a no-issue for me.
 
 Following on from the above, accessing properties via `props.` clearly indicates where the title in the above example originated from.
+
+### Something to think about
+
+Something to think about when using object destructuring to access props is the fact that every time you pass a new prop to a component, you need to add the new prop to your destructuring assignment. This is also true when modifying the key (name) of an existing prop.
+
+This can lead to you trying to access props in your component when they aren't defined. This is very quickly picked up in development by linters and I haven't found it to be a problem, but it's something to bear in mind.
 
 ### Conclusion
 
