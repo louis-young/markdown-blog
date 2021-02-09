@@ -13,6 +13,8 @@ ogImage:
 
 Today, we will explore various patterns used to destructure props in React components. Props (short for properties) are immutable properties that are passed down through React components from parent to child. They are key to React and it's unidirectional data flow.
 
+This article assumes that you're using functional components. If you aren't, a lot of what we're about to talk about isn't applicable due to how props are inherited in class components.
+
 There are many approaches to this and this subject can be quite subjective, so make your own judgements as to what works for you and your team.
 
 ## Approaches
