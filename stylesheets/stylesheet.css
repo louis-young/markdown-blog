@@ -12,8 +12,6 @@ pre {
   @apply rounded;
 }
 
-code {
-  @apply rounded px-1.5 py-1 text-sm;
-  color: #fff;
-  background: #011627;
+:not(pre) > code[class*="language-"] {
+  @apply rounded px-1.5 py-1 text-sm !important;
 }

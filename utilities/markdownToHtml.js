@@ -6,6 +6,7 @@ const markdownToHtml = async (markdown) => {
   const result = await remark()
     .use(html)
     .use(prism, {
+      transformInlineCode: true,
       plugins: [
         "autolinker",
         "command-line",
