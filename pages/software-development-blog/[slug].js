@@ -25,12 +25,23 @@ const Post = ({ post, preview }) => {
     );
   }
 
+  const title = `${post.title} | Louis Young`;
+
   return (
     <Layout preview={preview}>
       <>
         <Head>
-          <title>{post.title} | Louis Young</title>
+          <title>{title}</title>
+          <meta property="og:site_name" content={title} />
+          <meta property="og:title" content={title} />
+          <meta property="og:url" content={`https://blog.louisyoung.co.uk/software-development-blog/${post.slug}`} />
+          <meta property="og:description" content={post.excerpt} />
           <meta property="og:image" content={post.ogImage.url} />
+          <meta name="twitter:site" content={`https://blog.louisyoung.co.uk/software-development-blog/${post.slug}`} />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:url" content={`https://blog.louisyoung.co.uk/software-development-blog/${post.slug}`} />
+          <meta name="twitter:description" content={post.excerpt} />
+          <meta name="twitter:image" content={post.ogImage.url} />
         </Head>
 
         <Progress />
