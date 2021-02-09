@@ -18,7 +18,7 @@ const FeaturedPost = ({ title, postImage, date, excerpt, author, slug }) => {
           </a>
         </Link>
       </figure>
-      <figcaption className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-24">
+      <figcaption className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-12 mb-20 md:mb-24">
         <div>
           <h3 className="mb-4 text-3xl md:text-4xl lg:text-6xl leading-tight">
             <Link as={`/software-development-blog/${slug}`} href="/software-development-blog/[slug]">
