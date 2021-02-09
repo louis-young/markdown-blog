@@ -30,12 +30,8 @@ Arguably the most common, and my preferred method, destructuring props in the co
 Here is an example of this pattern:
 
 ```js
-const Component = ({ name, title }) => {
-  return (
-    <p>
-      {name} - {title}
-    </p>
-  );
+const Component = ({ title }) => {
+  return <p>{title}</p>;
 };
 ```
 
