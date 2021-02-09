@@ -7,17 +7,7 @@ const markdownToHtml = async (markdown) => {
     .use(html)
     .use(prism, {
       transformInlineCode: true,
-      plugins: [
-        "autolinker",
-        "command-line",
-        "data-uri-highlight",
-        "diff-highlight",
-        "inline-color",
-        "keep-markup",
-        "line-numbers",
-        "show-invisibles",
-        "treeview",
-      ],
+      plugins: ["line-numbers"],
     })
     .process(markdown);
 

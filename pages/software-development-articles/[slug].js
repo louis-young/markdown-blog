@@ -7,7 +7,6 @@ import Head from "next/head";
 import markdownToHtml from "../../utilities/markdownToHtml";
 import Author from "../../components/Author";
 import Date from "../../components/Date";
-import Header from "../../components/Header";
 import Progress from "../../components/Progress";
 import Container from "../../components/Container";
 
