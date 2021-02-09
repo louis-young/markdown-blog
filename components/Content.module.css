@@ -28,3 +28,15 @@
 .markdown a {
   @apply underline hover:opacity-70;
 }
+
+.markdown pre {
+  @apply rounded;
+}
+
+.markdown :not(pre) > code[class*="language-"] {
+  @apply rounded px-1.5 py-1 text-sm !important;
+}
+
+.markdown code {
+  font-size: 1rem;
+}
