@@ -4,7 +4,7 @@ import Content from "../../components/Content";
 import Layout from "../../components/Layout";
 import { getPostBySlug, getAllPosts } from "../../api/api";
 import Head from "next/head";
-import markdownToHtml from "../../utilities/utilities";
+import markdownToHtml from "../../utilities/markdown";
 import Author from "../../components/Author";
 import Date from "../../components/Date";
 import Progress from "../../components/Progress";
