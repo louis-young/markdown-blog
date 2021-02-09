@@ -11,3 +11,9 @@
 pre {
   @apply rounded;
 }
+
+code {
+  @apply rounded px-1.5 py-1 text-sm;
+  color: #fff;
+  background: #011627;
+}
