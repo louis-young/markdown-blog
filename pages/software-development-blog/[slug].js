@@ -32,13 +32,12 @@ const Post = ({ post, preview }) => {
       <>
         <Head>
           <title>{title}</title>
-          <meta property="og:site_name" content={title} />
-          <meta property="og:title" content={title} />
+          <meta property="og:site_name" content={post.title} />
+          <meta property="og:title" content={post.title} />
           <meta property="og:url" content={`https://blog.louisyoung.co.uk/software-development-blog/${post.slug}`} />
           <meta property="og:description" content={post.excerpt} />
           <meta property="og:image" content={post.ogImage.url} />
-          <meta name="twitter:site" content={`https://blog.louisyoung.co.uk/software-development-blog/${post.slug}`} />
-          <meta name="twitter:title" content={title} />
+          <meta name="twitter:title" content={post.title} />
           <meta name="twitter:url" content={`https://blog.louisyoung.co.uk/software-development-blog/${post.slug}`} />
           <meta name="twitter:description" content={post.excerpt} />
           <meta name="twitter:image" content={post.ogImage.url} />
@@ -76,7 +75,16 @@ const Post = ({ post, preview }) => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const post = getPostBySlug(params.slug, ["title", "date", "slug", "author", "content", "ogImage", "postImage"]);
+  const post = getPostBySlug(params.slug, [
+    "title",
+    "date",
+    "slug",
+    "author",
+    "content",
+    "ogImage",
+    "postImage",
+    "excerpt",
+  ]);
 
   const content = await markdownToHtml(post.content || "");
 
