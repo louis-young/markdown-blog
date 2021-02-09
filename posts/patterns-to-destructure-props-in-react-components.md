@@ -1,7 +1,7 @@
 ---
 title: "Patterns to destructure props in React components"
 excerpt: "Explore patterns to destructure props in React components. There are many approaches and this subject can be quite subjective, so make your own judgements as to what works for you and your team."
-postImage: "/assets/blog/patterns-to-destructure-props-in-react-components/introduction.jpg"
+image: "/assets/blog/patterns-to-destructure-props-in-react-components/introduction.jpg"
 date: "2021-02-09T05:35:07.322Z"
 author:
   name: Louis Young

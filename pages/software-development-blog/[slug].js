@@ -9,6 +9,7 @@ import Author from "../../components/Author";
 import Date from "../../components/Date";
 import Header from "../../components/Header";
 import Progress from "../../components/Progress";
+import Container from "../../components/Container";
 
 const Post = ({ post, preview }) => {
   const router = useRouter();
@@ -45,30 +46,29 @@ const Post = ({ post, preview }) => {
 
         <Progress />
 
-        <Header />
+        <Container>
+          <article className="mt-8 mb-24 md:mb-32">
+            <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-left">
+              {post.title}
+            </h1>
 
-        <article className="mb-24 md:mb-32">
-          <h1 className="text-6xl md:text-7xl xl:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-left">
-            {post.title}
-          </h1>
+            <div className="mt-12 mb-12">
+              <Author name={post.author.name} picture={post.author.picture} link={post.author.link} />
+            </div>
 
-          <div className="hidden md:block md:mb-12">
-            <Author name={post.author.name} picture={post.author.picture} link={post.author.link} />
-          </div>
+            <img
+              src={post.image}
+              alt={`Cover Image for ${post.title}`}
+              className="mb-8 md:mb-16 sm:mx-0 w-full h-full max-h-35 object-cover"
+            />
 
-          <img
-            src={post.postImage}
-            alt={`Cover Image for ${post.title}`}
-            layout="responsive"
-            className="mb-8 md:mb-16 sm:mx-0 w-full h-full max-h-35 object-cover"
-          />
+            <div className="max-w-2xl mx-auto mb-6 text-lg">
+              <Date dateString={post.date} />
+            </div>
 
-          <div className="max-w-2xl mx-auto mb-6 text-lg">
-            <Date dateString={post.date} />
-          </div>
-
-          <Content content={post.content} />
-        </article>
+            <Content content={post.content} />
+          </article>
+        </Container>
       </>
     </Layout>
   );
@@ -82,7 +82,7 @@ export const getStaticProps = async ({ params }) => {
     "author",
     "content",
     "ogImage",
-    "postImage",
+    "image",
     "excerpt",
   ]);
 

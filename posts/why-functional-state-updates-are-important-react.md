@@ -1,7 +1,7 @@
 ---
 title: "Why functional state updates are important in React"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget."
-postImage: "/assets/blog/why-functional-state-updates-are-important-react/introduction.jpg"
+image: "/assets/blog/why-functional-state-updates-are-important-react/introduction.jpg"
 date: "2021-02-08T05:35:07.322Z"
 author:
   name: Louis Young

@@ -2,33 +2,33 @@ import Author from "./Author";
 import Date from "./Date";
 import Link from "next/link";
 
-const Post = ({ title, postImage, date, excerpt, author, slug }) => {
+const Post = ({ title, image, date, excerpt, author, slug }) => {
   return (
     <article>
       <figure className="sm:mx-0 mb-5">
         <Link as={`/software-development-blog/${slug}`} href="/software-development-blog/[slug]">
           <a>
             <img
-              src={postImage}
-              className="w-full h-72 md:h-56 xl:h-96 object-cover shadow-sm hover:shadow-md hover:opacity-80 transition duration-200"
+              src={image}
+              className="w-full h-52 object-cover shadow-sm hover:shadow-md hover:opacity-80 transition duration-200"
               alt={`Cover Image for ${title}`}
-              layout="responsive"
+              loading="lazy"
             />
           </a>
         </Link>
       </figure>
 
-      <h3 className="text-3xl mb-3 leading-snug hover:underline">
+      <h3 className="text-2xl mb- font-bold leading-snug hover:underline">
         <Link as={`/software-development-blog/${slug}`} href="/software-development-blog/[slug]">
           <a>{title}</a>
         </Link>
       </h3>
 
-      <div className="text-lg mb-4">
+      {/* <div className="text-lg mt-4 mb-4">
         <Date dateString={date} />
-      </div>
+      </div> */}
 
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+      <p className="text-lg leading-relaxed mt-4 mb-4">{excerpt}</p>
 
       <Author name={author.name} picture={author.picture} link={author.link} />
     </article>
