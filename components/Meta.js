@@ -4,6 +4,7 @@ import { OG_IMAGE_URL } from "../constants/constants";
 const Meta = () => {
   return (
     <Head>
+      <title>Software Development Blog - Web Development | Louis Young</title>
       <meta name="theme-color" content="#000000" />
       <meta name="description" content="A software development blog by Louis Young." />
       <link rel="canonical" href="https://blog.louisyoung.co.uk" />

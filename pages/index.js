@@ -1,5 +1,4 @@
 import { getAllPosts } from "../api/api";
-import Head from "next/head";
 import Layout from "../components/Layout";
 import Post from "../components/Post";
 import Container from "../components/Container";
@@ -8,17 +7,13 @@ const Index = ({ posts }) => {
   return (
     <>
       <Layout>
-        <Head>
-          <title>Software Development Blog - Web Development | Louis Young</title>
-        </Head>
-
-        <div>
+        <section>
           <h1 className="py-20 text-center text-2xl md:text-4xl font-bold tracking-tight leading-normal md:leading-normal">
             Software development blog
             <br />
             by Louis Young
           </h1>
-        </div>
+        </section>
 
         <Container>
           <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8 mt-6 mb-32">
@@ -27,7 +22,6 @@ const Index = ({ posts }) => {
                 key={post.slug}
                 title={post.title}
                 image={post.image}
-                date={post.date}
                 author={post.author}
                 slug={post.slug}
                 excerpt={post.excerpt}

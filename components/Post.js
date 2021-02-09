@@ -2,7 +2,7 @@ import Author from "./Author";
 import Date from "./Date";
 import Link from "next/link";
 
-const Post = ({ title, image, date, excerpt, author, slug }) => {
+const Post = ({ title, image, excerpt, author, slug }) => {
   return (
     <article>
       <figure className="sm:mx-0 mb-5">
@@ -23,10 +23,6 @@ const Post = ({ title, image, date, excerpt, author, slug }) => {
           <a>{title}</a>
         </Link>
       </h3>
-
-      {/* <div className="text-lg mt-4 mb-4">
-        <Date dateString={date} />
-      </div> */}
 
       <p className="text-lg leading-relaxed mt-4 mb-4">{excerpt}</p>
 
