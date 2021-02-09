@@ -11,7 +11,7 @@ const FeaturedPost = ({ title, postImage, date, excerpt, author, slug }) => {
           <a>
             <img
               src={postImage}
-              className="w-full h-full max-h-35 mb-5 md:mb-0 object-cover shadow-sm hover:shadow-md hover:opacity-90 transition-shadow duration-200"
+              className="w-full h-full max-h-35 mb-5 md:mb-0 object-cover shadow-sm hover:shadow-md hover:opacity-80 transition duration-200"
               alt={`Cover Image for ${title}`}
               layout="responsive"
             />

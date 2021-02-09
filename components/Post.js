@@ -10,7 +10,7 @@ const Post = ({ title, postImage, date, excerpt, author, slug }) => {
           <a>
             <img
               src={postImage}
-              className="shadow-sm hover:shadow-md hover:opacity-90 transition-shadow duration-200"
+              className="w-full h-72 md:h-56 xl:h-96 object-cover shadow-sm hover:shadow-md hover:opacity-80 transition duration-200"
               alt={`Cover Image for ${title}`}
               layout="responsive"
             />
