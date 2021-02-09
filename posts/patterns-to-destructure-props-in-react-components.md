@@ -1,14 +1,14 @@
 ---
 title: "Patterns to destructure props in React components"
 excerpt: "Today, we will explore various patterns used to destructure props in React components. Props (short for properties) are immutable properties that are passed down through React components from parent to child."
-image: "/assets/blog/patterns-to-destructure-props-in-react-components/introduction.jpg"
+image: "/blog/patterns-to-destructure-props-in-react-components/introduction.jpg"
 date: "2021-02-09T05:35:07.322Z"
 author:
   name: Louis Young
-  picture: "/assets/blog/authors/louis.jpg"
+  picture: "/blog/authors/louis.jpg"
   link: "https://www.louisyoung.co.uk"
 ogImage:
-  url: "/assets/blog/patterns-to-destructure-props-in-react-components/introduction.jpg"
+  url: "/blog/patterns-to-destructure-props-in-react-components/introduction.jpg"
 ---
 
 Today, we will explore various patterns used to destructure props in React components. Props (short for properties) are immutable properties that are passed down through React components from parent to child. They are key to React and it's unidirectional data flow.

@@ -1,14 +1,14 @@
 ---
 title: "How to recognise and prevent derived state in React"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget."
-image: "/assets/blog/how-to-recognise-and-prevent-derived-state-react/introduction.jpg"
+image: "/blog/how-to-recognise-and-prevent-derived-state-react/introduction.jpg"
 date: "2021-02-06T05:35:07.322Z"
 author:
   name: Louis Young
-  picture: "/assets/blog/authors/louis.jpg"
+  picture: "/blog/authors/louis.jpg"
   link: "https://www.louisyoung.co.uk"
 ogImage:
-  url: "/assets/blog/how-to-recognise-and-prevent-derived-state-react/introduction.jpg"
+  url: "/blog/how-to-recognise-and-prevent-derived-state-react/introduction.jpg"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
