@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import styles from "./Progress.module.css";
+
 const Progress = () => {
   const [progress, setProgress] = useState(0);
 
@@ -20,14 +22,7 @@ const Progress = () => {
     };
   }, [calculatePercentage]);
 
-  return (
-    <span
-      className="w-full fixed left-0 top-0 h-2 transition duration-500 ease-in-out"
-      style={{
-        background: `linear-gradient(to right, black ${progress}%, transparent 0)`,
-      }}
-    ></span>
-  );
+  return <progress className={styles.progress} value={progress} max="100"></progress>;
 };
 
 export default Progress;
