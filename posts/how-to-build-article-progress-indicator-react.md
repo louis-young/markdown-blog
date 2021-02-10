@@ -9,7 +9,7 @@ author:
   link: "https://www.louisyoung.co.uk"
 ---
 
-Today we are going to build an article progress indicator, also known as a reading position indicator. These can be useful to allow readers to easily visualise the length of an article, and see their reading progress (more on this later).
+Today, we're going to build an article progress indicator, also known as a reading position indicator. These can be useful to allow readers to easily visualise the length of an article, and see their reading progress (more on this later).
 
 ## What is an article progress indicator?
 
