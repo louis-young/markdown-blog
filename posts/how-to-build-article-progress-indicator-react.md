@@ -15,6 +15,15 @@ Today, we're going to build an article progress indicator, also known as a readi
 
 There are many different implementations but the most common is a slim bar along the top of the page (as you can see above on my site).
 
+Here's what we're going to be building today:
+
+<iframe src="https://codesandbox.io/embed/article-progress-indicator-jelsc?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Article Progress Indicator"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 ## Why use an article progress indicator?
 
 There are a few different uses for an article progress indicator, primarily giving users an easy visualisation of the length of an article, and their reading progress. They are also a cool little feature which doesn't take long to build.
@@ -201,6 +210,15 @@ We disable the native `progress` element styles, and give it our own. Feel free 
 
 Now simply render your component and admire your hard work!
 
+Here's the finished product:
+
+<iframe src="https://codesandbox.io/embed/article-progress-indicator-jelsc?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Article Progress Indicator"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+   
 ## Conclusion
 
 We've learnt how to build an article progress indicator in React, utilising the `useState` and `useEffect` hooks.
