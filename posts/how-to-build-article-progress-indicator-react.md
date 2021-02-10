@@ -1,6 +1,6 @@
 ---
 title: "How to build an article progress indicator in React"
-excerpt: "Today we are going to build an article progress indicator, also known as a reading position indicator. These can be useful to allow readers to easily visualise the length of an article, and see their reading progress."
+excerpt: "Today, we're going to build an article progress indicator, also known as a reading position indicator. These can be useful to allow readers to easily visualise the length of an article, and see their reading progress."
 image: "/blog/how-to-build-article-progress-indicator-react/introduction.jpg"
 date: "2021-02-10T05:35:07.322Z"
 author:
