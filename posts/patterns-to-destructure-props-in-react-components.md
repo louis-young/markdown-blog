@@ -11,15 +11,19 @@ ogImage:
   url: "/blog/patterns-to-destructure-props-in-react-components/introduction.jpg"
 ---
 
-Today, we will explore various patterns used to destructure props in React components. Props (short for properties) are immutable properties that are passed down through React components from parent to child. They are key to React and it's unidirectional data flow.
+Today, we will explore various patterns used to destructure props in React components.
 
 This article assumes that you're using functional components. If you aren't, a lot of what we're about to talk about isn't applicable due to how props are inherited by class components.
 
 There are many approaches and this topic can be quite subjective, so make your own judgements as to what works for you and your team.
 
-## Approaches
+## What are props?
 
-The three most common approaches we see when accessing props in React components are as follows:
+Props (short for properties) are immutable properties that are passed down through React components from parent to child. They are key to React and it's unidirectional data flow.
+
+## Patterns
+
+The three most common patterns we see when accessing props in React components are as follows:
 
 1. [Destructuring in the component parameters](#destructuring-in-the-component-parameters)
 2. [Destructuring in the component body](#destructuring-in-the-component-body)
@@ -117,7 +121,7 @@ Following on from the above, accessing properties via `props.` clearly indicates
 
 ## Something to think about
 
-Something to think about when using object destructuring to access props is the fact that every time you pass a new prop to a component, you need to add the new prop to your destructuring assignment. This is also true when modifying the key (name) of an existing prop.
+Something to think about when using object destructuring to access props is that every time you pass a new prop to a component, you need to add the new prop to your destructuring assignment. This is also true when modifying the key (name) of an existing prop.
 
 This can lead to you trying to access props in your component when they aren't defined. This is very quickly picked up in development by linters and I haven't found it to be a problem, but it's something to bear in mind.
 
