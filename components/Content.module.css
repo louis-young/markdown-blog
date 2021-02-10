@@ -17,6 +17,15 @@
   @apply text-2xl mt-8 mb-8 leading-snug font-bold;
 }
 
+.markdown ol,
+.markdown ul {
+  @apply ml-6;
+}
+
+.markdown li {
+  @apply py-2;
+}
+
 .markdown ol {
   @apply list-decimal list-inside;
 }
