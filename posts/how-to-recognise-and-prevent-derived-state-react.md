@@ -1,8 +1,8 @@
 ---
 title: "How to recognise and prevent derived state in React"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget."
+excerpt: "Recognising and preventing derived state in React is a very broad topic. React recommend that it should be used sparingly, so today we'll discuss a few of the most common forms of derived state, and solutions to prevent it."
 image: "/blog/how-to-recognise-and-prevent-derived-state-react/introduction.jpg"
-date: "2021-02-06T05:35:07.322Z"
+date: "2021-02-08T05:35:07.322Z"
 author:
   name: Louis Young
   picture: "/blog/authors/louis.jpg"
@@ -11,10 +11,68 @@ ogImage:
   url: "/blog/how-to-recognise-and-prevent-derived-state-react/introduction.jpg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+Recognising and preventing derived state in React is a very broad topic. React recommend that it should be used sparingly, so today we'll discuss a few of the most common forms of derived state, and solutions to prevent it.
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+## What is derived state?
 
-## Lorem Ipsum
+Derived state is state that can be derived from an existing piece of state, or state which is derived from props.
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+The chances are that if a value can be derived from an existing piece of state, it's probably not state (and shouldn't be stored as such).
+
+## Examples
+
+A basic example is some state containing messages.
+
+```js
+const Messages = () => {
+  const [messages, setMessages] = useState([]);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    // Fetch messages from an API...
+    const fetchedMessages = ["Hello", "World"];
+
+    setMessages(fetchedMessages);
+    setTotal(fetchedMessages.length);
+  }, []);
+
+  return (
+    <h1>Messages ({total})</h1>
+
+    // Render the list of messages...
+  );
+};
+```
+
+This is a form of derived state and should be avoided where possible. We shouldn't store the total amount of messages in state as it can be derived from messages (an existing piece of state). To prevent this, we would compute this value at render.
+
+Let's see what that looks like:
+
+```js
+const Messages = () => {
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    // Fetch messages from an API...
+    const fetchedMessages = ["Hello", "World"];
+
+    setMessages(fetchedMessages);
+  }, []);
+
+  return (
+    <h1>Messages ({messages.length})</h1>
+
+    // Render the list of messages...
+  );
+};
+```
+
+That's better. We are now calculating the total message count at render instead. This makes our code more clean and concise and prevents storing unnecessary derived state.
+
+## Performance
+
+If computing your value at render is expensive and is _actually_ causing performance issues, then consider memoization.
+
+## Conclusion
+
+Put simply, if you can compute a value from existing state, it probably isn't state and you should probably compute it at render instead.

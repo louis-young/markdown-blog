@@ -115,13 +115,13 @@ Some would consider this approach too verbose as you have to repeat `props.` eve
 
 Following on from the above, accessing properties via `props.` clearly indicates where the title in the above example originated from.
 
-### Something to think about
+## Something to think about
 
 Something to think about when using object destructuring to access props is the fact that every time you pass a new prop to a component, you need to add the new prop to your destructuring assignment. This is also true when modifying the key (name) of an existing prop.
 
 This can lead to you trying to access props in your component when they aren't defined. This is very quickly picked up in development by linters and I haven't found it to be a problem, but it's something to bear in mind.
 
-### Conclusion
+## Conclusion
 
 We've talked about a few of the most common patterns for destructuring props in React components, and have discussed why they can be good, bad, and some of the potential pitfalls of each approach.
 
