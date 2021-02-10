@@ -15,3 +15,4 @@ I built this application to allow myself to create and manage blog posts effortl
 - Next.js
 - React
 - Tailwind
+- Prism
