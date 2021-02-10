@@ -36,7 +36,7 @@ const Post = ({ post, preview }) => {
           <meta name="description" content={excerpt} />
           <link rel="canonical" href={`https://blog.louisyoung.co.uk/${post.slug}`} />
 
-          <meta property="og:site_name" content={post.title} />
+          <meta property="og:site_name" content="Louis Young" />
           <meta property="og:title" content={post.title} />
           <meta
             property="og:url"
@@ -44,6 +44,7 @@ const Post = ({ post, preview }) => {
           />
           <meta property="og:description" content={excerpt} />
           <meta property="og:image" content={post.image} />
+
           <meta name="twitter:title" content={post.title} />
           <meta
             name="twitter:url"

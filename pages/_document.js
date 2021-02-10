@@ -15,6 +15,11 @@ class MyDocument extends Document {
               gtag('config', 'G-CQ5X65RCG6');`,
             }}
           />
+          <meta name="theme-color" content="#000000" />
+          <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
+
+          <meta name="twitter:site" content="@louisryoungg" />
+          <meta property="og:type" content="website" />
         </Head>
         <body>
           <Main />
