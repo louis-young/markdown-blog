@@ -9,6 +9,7 @@ import Author from "../../components/Author";
 import Date from "../../components/Date";
 import Progress from "../../components/Progress";
 import Container from "../../components/Container";
+import truncate from "../../utilities/truncate";
 
 const Post = ({ post, preview }) => {
   const router = useRouter();
@@ -25,28 +26,31 @@ const Post = ({ post, preview }) => {
     );
   }
 
-  const title = `${post.title} | Louis Young`;
+  const excerpt = truncate(post.excerpt);
 
   return (
     <Layout preview={preview}>
       <>
         <Head>
-          <title>{title}</title>
+          <title>{`${post.title} | Louis Young`}</title>
+          <meta name="description" content={excerpt} />
+          <link rel="canonical" href={`https://blog.louisyoung.co.uk/${post.slug}`} />
+
           <meta property="og:site_name" content={post.title} />
           <meta property="og:title" content={post.title} />
           <meta
             property="og:url"
             content={`https://blog.louisyoung.co.uk/software-development-articles/${post.slug}`}
           />
-          <meta property="og:description" content={post.excerpt} />
-          <meta property="og:image" content={post.ogImage.url} />
+          <meta property="og:description" content={excerpt} />
+          <meta property="og:image" content={post.image} />
           <meta name="twitter:title" content={post.title} />
           <meta
             name="twitter:url"
             content={`https://blog.louisyoung.co.uk/software-development-articles/${post.slug}`}
           />
-          <meta name="twitter:description" content={post.excerpt} />
-          <meta name="twitter:image" content={post.ogImage.url} />
+          <meta name="twitter:description" content={excerpt} />
+          <meta name="twitter:image" content={post.image} />
         </Head>
 
         <Progress />
@@ -80,16 +84,7 @@ const Post = ({ post, preview }) => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "image",
-    "excerpt",
-  ]);
+  const post = getPostBySlug(params.slug, ["title", "date", "slug", "author", "content", "image", "excerpt"]);
 
   const content = await markdownToHtml(post.content || "");
 

@@ -7,8 +7,6 @@ author:
   name: Louis Young
   picture: "/blog/authors/louis.jpg"
   link: "https://www.louisyoung.co.uk"
-ogImage:
-  url: "/blog/how-to-build-article-progress-indicator-react/introduction.jpg"
 ---
 
 Today we are going to build an article progress indicator, also known as a reading position indicator. These can be useful to allow readers to easily visualise the length of an article, and see their reading progress (more on this later).

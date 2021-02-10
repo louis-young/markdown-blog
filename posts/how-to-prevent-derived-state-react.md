@@ -7,8 +7,6 @@ author:
   name: Louis Young
   picture: "/blog/authors/louis.jpg"
   link: "https://www.louisyoung.co.uk"
-ogImage:
-  url: "/blog/how-to-prevent-derived-state-react/introduction.jpg"
 ---
 
 Today we will look at how to prevent derived state in React.

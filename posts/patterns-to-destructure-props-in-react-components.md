@@ -7,8 +7,6 @@ author:
   name: Louis Young
   picture: "/blog/authors/louis.jpg"
   link: "https://www.louisyoung.co.uk"
-ogImage:
-  url: "/blog/patterns-to-destructure-props-in-react-components/introduction.jpg"
 ---
 
 Today, we will explore various patterns used to destructure props in React components.

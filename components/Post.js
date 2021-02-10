@@ -1,8 +1,10 @@
 import Author from "./Author";
-import Date from "./Date";
 import Link from "next/link";
+import truncate from "../utilities/truncate";
 
 const Post = ({ title, image, excerpt, author, slug }) => {
+  const preview = truncate(excerpt);
+
   return (
     <article>
       <figure className="sm:mx-0 mb-5">
@@ -24,7 +26,7 @@ const Post = ({ title, image, excerpt, author, slug }) => {
         </Link>
       </h3>
 
-      <p className="text-lg leading-relaxed mt-4 mb-4">{excerpt}</p>
+      <p className="text-lg leading-relaxed mt-4 mb-4">{preview}</p>
 
       <Author name={author.name} picture={author.picture} link={author.link} />
     </article>
