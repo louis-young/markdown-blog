@@ -1,14 +1,14 @@
 ---
 title: "How to prevent derived state in React"
 excerpt: "Today we will look at how to prevent derived state in React. Derived state is state that can be derived from an existing piece of state, or state which is derived from props."
-image: "/blog/how-to--prevent-derived-state-react/introduction.jpg"
+image: "/blog/how-to-prevent-derived-state-react/introduction.jpg"
 date: "2021-02-08T05:35:07.322Z"
 author:
   name: Louis Young
   picture: "/blog/authors/louis.jpg"
   link: "https://www.louisyoung.co.uk"
 ogImage:
-  url: "/blog/how-to--prevent-derived-state-react/introduction.jpg"
+  url: "/blog/how-to-prevent-derived-state-react/introduction.jpg"
 ---
 
 Today we will look at how to prevent derived state in React.
