@@ -42,7 +42,7 @@ const Messages = () => {
 };
 ```
 
-This is a form of derived state and should be avoided where possible. We shouldn't store the total amount of messages in state as it can be derived from messages (an existing piece of state). To prevent this, we would compute this value at render.
+This is a form of derived state and should be avoided where possible. We shouldn't store the total amount of messages in state as it can be derived from `messages` (an existing piece of state). To prevent this, we would compute this value at render.
 
 Let's see what that looks like:
 
