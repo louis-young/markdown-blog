@@ -1,5 +1,3 @@
-import React from "react";
-
 const Social = ({ title, link, icon }) => {
   return (
     <li>

@@ -1,5 +1,6 @@
 import Author from "./Author";
 import Link from "next/link";
+
 import truncate from "../utilities/truncate";
 
 const Post = ({ title, image, excerpt, author, slug }) => {

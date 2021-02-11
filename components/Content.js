@@ -1,4 +1,5 @@
 import styles from "./Content.module.css";
+
 import "prism-theme-night-owl";
 
 const Content = ({ content }) => {

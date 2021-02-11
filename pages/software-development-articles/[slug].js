@@ -1,17 +1,21 @@
-import { useRouter } from "next/router";
+import Head from "next/head";
 import ErrorPage from "next/error";
+import { useRouter } from "next/router";
+
 import Content from "../../components/Content";
 import Layout from "../../components/Layout";
-import { getPostBySlug, getAllPosts } from "../../api/api";
-import Head from "next/head";
-import markdownToHtml from "../../utilities/markdown";
 import Author from "../../components/Author";
 import Date from "../../components/Date";
 import Progress from "../../components/Progress";
 import Container from "../../components/Container";
-import truncate from "../../utilities/truncate";
 
-const Post = ({ post, preview }) => {
+import markdownToHtml from "../../utilities/markdown";
+import truncate from "../../utilities/truncate";
+import { getPostBySlug, getAllPosts } from "../../api/api";
+
+import { BLOG_TITLE } from "../../constants/constants";
+
+const Post = ({ post }) => {
   const router = useRouter();
 
   if (!router.isFallback && !post?.slug) {
@@ -26,60 +30,54 @@ const Post = ({ post, preview }) => {
     );
   }
 
-  const excerpt = truncate(post.excerpt);
+  const { title, slug, excerpt, image, author, date, content } = post;
+
+  const truncatedExcerpt = truncate(excerpt);
 
   return (
-    <Layout preview={preview}>
-      <>
-        <Head>
-          <title>{`${post.title} | Louis Young`}</title>
-          <meta name="description" content={excerpt} />
-          <link rel="canonical" href={`https://blog.louisyoung.co.uk/${post.slug}`} />
+    <Layout>
+      <Head>
+        <title>{`${title} | ${BLOG_TITLE}`}</title>
+        <meta name="description" content={truncatedExcerpt} />
+        <link rel="canonical" href={`https://blog.louisyoung.co.uk/${slug}`} />
 
-          <meta property="og:site_name" content="Louis Young" />
-          <meta property="og:title" content={post.title} />
-          <meta
-            property="og:url"
-            content={`https://blog.louisyoung.co.uk/software-development-articles/${post.slug}`}
+        <meta property="og:site_name" content={BLOG_TITLE} />
+        <meta property="og:title" content={title} />
+        <meta property="og:url" content={`https://blog.louisyoung.co.uk/software-development-articles/${slug}`} />
+        <meta property="og:description" content={truncatedExcerpt} />
+        <meta property="og:image" content={image} />
+
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:url" content={`https://blog.louisyoung.co.uk/software-development-articles/${slug}`} />
+        <meta name="twitter:description" content={truncatedExcerpt} />
+        <meta name="twitter:image" content={image} />
+      </Head>
+
+      <Progress />
+
+      <Container>
+        <article className="mt-8 mb-24 md:mb-32">
+          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-left">
+            {title}
+          </h1>
+
+          <div className="mt-12 mb-12">
+            <Author name={author.name} picture={author.picture} link={author.link} />
+          </div>
+
+          <img
+            src={image}
+            alt={`Cover Image for ${title}`}
+            className="mb-8 md:mb-16 sm:mx-0 w-full h-full max-h-35 object-cover rounded"
           />
-          <meta property="og:description" content={excerpt} />
-          <meta property="og:image" content={post.image} />
 
-          <meta name="twitter:title" content={post.title} />
-          <meta
-            name="twitter:url"
-            content={`https://blog.louisyoung.co.uk/software-development-articles/${post.slug}`}
-          />
-          <meta name="twitter:description" content={excerpt} />
-          <meta name="twitter:image" content={post.image} />
-        </Head>
+          <div className="max-w-2xl mx-auto mb-6 text-lg">
+            <Date dateString={date} />
+          </div>
 
-        <Progress />
-
-        <Container>
-          <article className="mt-8 mb-24 md:mb-32">
-            <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-left">
-              {post.title}
-            </h1>
-
-            <div className="mt-12 mb-12">
-              <Author name={post.author.name} picture={post.author.picture} link={post.author.link} />
-            </div>
-
-            <img
-              src={post.image}
-              alt={`Cover Image for ${post.title}`}
-              className="mb-8 md:mb-16 sm:mx-0 w-full h-full max-h-35 object-cover rounded"
-            />
-
-            <div className="max-w-2xl mx-auto mb-6 text-lg">
-              <Date dateString={post.date} />
-            </div>
-
-            <Content content={post.content} />
-          </article>
-        </Container>
-      </>
+          <Content content={content} />
+        </article>
+      </Container>
     </Layout>
   );
 };
