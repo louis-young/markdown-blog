@@ -1,4 +1,4 @@
-# Personal Blog
+# Markdown Blog
 
 A statically generated personal blog website written in Next.js.
 
