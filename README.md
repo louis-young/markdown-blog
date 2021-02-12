@@ -1,10 +1,10 @@
 # Markdown Blog
 
-A statically generated personal blog website written in Next.js.
+A statically generated blog website written in Next.js.
 
 ## Description
 
-This is a Next.js application for my own personal blog. It is statically generated using Next.js and uses posts written in markdown.
+This is a Next.js application for my own personal blog. It is statically generated using Next.js and uses posts written in markdown. I have since rebuilt this project using Gatsby.
 
 ## Motivation
 
