@@ -1,6 +1,6 @@
 # Markdown Blog
 
-A statically generated blog website written in Next.js.
+A statically generated blog website built with Next.js.
 
 ## Description
 
